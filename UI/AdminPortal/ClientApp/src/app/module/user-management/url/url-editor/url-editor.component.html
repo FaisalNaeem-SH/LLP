@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>ADD {{ entity.entityName | uppercase }}</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="entityForm" fxLayout="column" fxLayoutGap="20px">
+    <div fxLayout="row" fxLayoutGap="20px">
+      <mat-form-field flex="1">
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          type="text"
+          [formControlName]="'title'"
+          id="title"
+          name="title"
+        />
+      </mat-form-field>
+      <mat-form-field flex="1">
+        <mat-label>URL</mat-label>
+        <input
+          matInput
+          type="text"
+          [formControlName]="'url'"
+          id="url"
+          name="url"
+        />
+      </mat-form-field>
+    </div>
+    <mat-form-field fxFlex="100" class="full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput name="Description" id="Description"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<app-base-editor></app-base-editor>

@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>ADD {{ entity.entityName | uppercase }}</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="entityForm" fxLayout="column" fxLayoutGap="20px">
+    <div fxLayout="row" fxLayoutGap="20px">
+      <mat-form-field flex="1">
+        <mat-label>User Role</mat-label>
+        <input
+          matInput
+          type="text"
+          [formControlName]="'role'"
+          id="userRole"
+          name="UserRole"
+        />
+      </mat-form-field>
+      <app-appdropdown [label]="'Index Page'"></app-appdropdown>
+      <app-apptree></app-apptree>
+    </div>
+  </form>
+</mat-dialog-content>
+<app-base-editor></app-base-editor>

@@ -1,0 +1,67 @@
+
+
+*{
+font-family: sans-serif;
+box-sizing: border-box;
+text-decoration: none;
+}
+mat-icon{
+    color: #000;
+    vertical-align: middle;
+    font-family: 'Material Icons';
+    cursor: pointer;
+
+}
+
+.top{
+    margin-top: 15px;
+    padding: 5px;
+    text-align: right;
+    font-size: 30px;
+}
+.user{
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 50px;
+    img{
+        margin-top: 16px;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+    .mail{
+        margin-top: -16px;
+    }
+}
+
+.menu-head{
+   text-transform: uppercase;
+    font-size: 0.8rem;
+    margin: .5rem 1rem;
+    font-weight: bold;
+    color: #033C73;
+    white-space: nowrap;
+    position: relative;
+}
+
+.menu-item{
+    .menu-button{
+        width: 100%;
+        color: #000;
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: start;
+
+        span{
+            margin-left: 5px;
+        }
+    }
+    .menu-button & :hover{
+        background-color: gray;
+    }
+    .menu-button:focus{
+        background-color: gray;
+    }
+}

@@ -1,0 +1,20 @@
+<div class="top-btn-row">
+  <mat-dialog-actions align="end">
+    <div *ngFor="let button of editorButtons">
+      <div *ngIf="button.name == 'Submit'">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="button.callBackFunction()"
+        >
+          Submit
+        </button>
+      </div>
+      <div *ngIf="button.name == 'Cancel'">
+        <button mat-raised-button color="warn" cdkFocusInitial mat-dialog-close>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>

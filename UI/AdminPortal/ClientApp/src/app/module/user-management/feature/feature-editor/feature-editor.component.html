@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>ADD {{ entity.entityName | uppercase }}</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="entityForm" fxLayout="column" fxLayoutGap="20px">
+    <div fxLayout="row" fxLayoutGap="20px">
+      <app-appdropdown [label]="'URL'"></app-appdropdown>
+      <app-appdropdown [label]="'Permission'"></app-appdropdown>
+
+      <mat-form-field flex="1">
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          type="text"
+          [formControlName]="'title'"
+          id="title"
+          name="title"
+        />
+      </mat-form-field>
+    </div>
+  </form>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="feature">
+      <th mat-header-cell *matHeaderCellDef>Feature</th>
+      <td mat-cell *matCellDef="let element">{{ element.feature }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon color="primary">edit</mat-icon>
+        <mat-icon color="warn">delete</mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</mat-dialog-content>
+<app-base-editor></app-base-editor>
